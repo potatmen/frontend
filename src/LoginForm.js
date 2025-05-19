@@ -16,7 +16,7 @@ function LoginForm(){
             const requestBody = {username, password}
             const response = await axios.post('http://127.0.0.1:3000/api/user/login', requestBody)
             localStorage.setItem('access_token', response.access_token)
-            navigate('/')
+            navigate('/app')
         } catch (error) {
             Swal.fire({
                 icon: "error",
