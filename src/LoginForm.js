@@ -14,15 +14,15 @@ function LoginForm(){
         e.preventDefault()
         try {
             const requestBody = {username, password}
-            const response = await axios.post('http://127.0.0.1:3000/api/user/login', requestBody)
-            localStorage.setItem('access_token', response.access_token)
+            const response = await axios.post('http://127.0.0.1:3000/api/user/login', requestBody);
+            localStorage.setItem('access_token', response.data.message.accessToken)
+            localStorage.setItem('refresh_token', response.data.message.refreshToken)
             navigate('/app')
         } catch (error) {
             Swal.fire({
                 icon: "error",
                 title: "Oops...",
-                text: error.response?.data?.message || "Login failed."
-
+                text: error.response?.data?.status || "Login failed."
             });
         }
     }

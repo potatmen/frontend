@@ -24,7 +24,7 @@ function RegisterForm() {
             Swal.fire({
                 icon: "error",
                 title: "Oops...",
-                text: error.response?.data?.message || "Registration failed."
+                text: error.response?.data?.status || "Registration failed."
             });
         }
     }
