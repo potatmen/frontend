@@ -6,16 +6,16 @@ import Home from './HomePage';
 
 function App() {
   return (
-    <Router>
+    <Router> {/* Wrap the application in the Router */}
       <div className="App">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<LoginForm />} />
-          <Route path="/register" element={<RegisterForm />} />
+        <Routes> {/* Define routes for the application */}
+          <Route path="/" element={<Home />} /> {/* Route for the home page */}
+          <Route path="/login" element={<LoginForm />} /> {/* Route for the login page */}
+          <Route path="/register" element={<RegisterForm />} /> {/* Route for the registration page */}
         </Routes>
       </div>
     </Router>
   );
 }
 
-export default App;
+export default App; // Export the App component
